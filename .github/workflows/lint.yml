@@ -1,0 +1,15 @@
+name: lint
+
+on:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4
+        with:
+          python-version: "3.13"
+      - run: uv sync --group dev
+      - run: uv run pre-commit run --all-files
