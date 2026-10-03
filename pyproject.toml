@@ -18,5 +18,11 @@ dev = [
 requires = ["uv_build>=0.12.19,<0.13.0"]
 build-backend = "uv_build"
 
+[tool.uv]
+environments = [
+    "sys_platform == 'win32'",
+    "sys_platform == 'linux'",
+]
+
 [tool.uv.build-backend]
 module-name = "audio_pipeline"
