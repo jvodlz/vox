@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "Audio cleanup and voice cloning pipeline"
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
-dependencies = []
+dependencies = [
+    "demucs>=4.1.0,<4.2",
+    "numpy>=2.1,<3",
+]
 
 [dependency-groups]
 dev = [
